@@ -20,7 +20,7 @@ xlm-roberta-base를 기반으로 학습하였습니다.
 ### polarity classification
 추출 된 category에 대해 모델 입력형태를 \<s>sentence_form\</s>\</s>카테고리\</s>와 같이하고, positive, neutral, negative로 classification 합니다.
 
-###성능
+### 성능
 baseline 코드에서 제공된 평가 코드로 평가하였을때, 아래와 같이 결과가 나왔습니다.
 category extraction result는 category 추출에 대해서만 평가한것이고, entire pipeline은 polarity 분류까지 포함한 성능입니다.
 | 평가                       |  P/R/F1         |
