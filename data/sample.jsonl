@@ -1,0 +1,15 @@
+{"id": "nikluge-sa-2022-train-00001", "sentence_form": "둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.", "annotation": [["본품#품질", ["기어", 16, 18], "negative"]]}
+{"id": "nikluge-sa-2022-train-00002", "sentence_form": "이거 뭐 삐꾸를 준 거 아냐 불안하고, 거금 투자한 게 왜 이래.. 싶어서 정이 확 떨어졌는데 산 곳 가져가서 확인하니 기어 텐션 문제라고 고장 아니래.", "annotation": [["본품#품질", ["기어 텐션", 67, 72], "negative"]]}
+{"id": "nikluge-sa-2022-train-00003", "sentence_form": "간사하게도 그 이후에는 라이딩이 아주 즐거워져서 만족스럽게 탔다.", "annotation": [["제품 전체#일반", [null, 0, 0], "positive"]]}
+{"id": "nikluge-sa-2022-train-00004", "sentence_form": "샥이 없는 모델이라 일반 도로에서 타면 노면의 진동 때문에 손목이 덜덜덜 떨리고 이가 부딪칠 지경인데 이마저도 며칠 타면서 익숙해지니 신경쓰이지 않게 됐다.", "annotation": [["제품 전체#일반", ["샥이 없는 모델", 0, 8], "neutral"]]}
+{"id": "nikluge-sa-2022-train-00005", "sentence_form": "안장도 딱딱해서 엉덩이가 아팠는데 무시하고 타고 있다.", "annotation": [["본품#일반", ["안장", 0, 2], "negative"]]}
+{"id": "nikluge-sa-2022-train-00006", "sentence_form": "지금 내 실력과 저질 체력으로는 이 정도 자전거도 되게 훌륭한 거라는..", "annotation": [["제품 전체#일반", ["자전거", 23, 26], "positive"]]}
+{"id": "nikluge-sa-2022-train-00007", "sentence_form": "내장 기어 3단은 썩 좋은 물건이라 기어 변환도 부드럽고 겉에서는 기어가 보이지 않기 때문에 깔끔하다.", "annotation": [["본품#품질", ["내장 기어 3단", 0, 8], "positive"]]}
+{"id": "nikluge-sa-2022-train-00008", "sentence_form": "한번 교환했는데 새로 온 UD20은 불량화소가 있고 ㅜ ㅜ ㅜ", "annotation": [["본품#품질", ["UD20", 14, 18], "negative"]]}
+{"id": "nikluge-sa-2022-train-00009", "sentence_form": "전에 작동 안되었던 자막 검색 후 등록 기능이 똑같이 작동 안 된다!!!", "annotation": [["본품#품질", ["자막 검색 후 등록 기능", 11, 24], "negative"]]}
+{"id": "nikluge-sa-2022-train-00010", "sentence_form": "왜 [등록]키를 만들어놓고 제대로 단어장에 등록이 되지 않는 거냐!!", "annotation": [["본품#품질", ["등록]키", 3, 7], "negative"]]}
+{"id": "nikluge-sa-2022-train-00011", "sentence_form": "다른 부가 기능은 참 훌륭한데..", "annotation": [["본품#품질", ["부가 기능", 3, 8], "positive"]]}
+{"id": "nikluge-sa-2022-train-00012", "sentence_form": "미치겠네.", "annotation": [["제품 전체#일반", [null, 0, 0], "negative"]]}
+{"id": "nikluge-sa-2022-train-00013", "sentence_form": "아.. 진짜 기계 사겠나.", "annotation": [["제품 전체#일반", [null, 0, 0], "negative"]]}
+{"id": "nikluge-sa-2022-train-00014", "sentence_form": "이번에는 사전까지..", "annotation": [["제품 전체#일반", [null, 0, 0], "negative"]]}
+{"id": "nikluge-sa-2022-train-00015", "sentence_form": "이런 젠장..", "annotation": [["제품 전체#일반", [null, 0, 0], "negative"]]}
