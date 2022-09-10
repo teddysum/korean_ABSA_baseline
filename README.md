@@ -1,5 +1,7 @@
 # korean_ABSA_baseline
 
+본 소스코드는는 '2022 국립국어원 인공 지능 언어 능력 평가'의 속성 기반 감성 분석 과제의 베이스라인 모델 및 학습과 평가를 위한 코드를 제공하고 있습니다. 자세한 코드의 설명은 '...ipynb' notebook을 확인해주세요
+
 sample.jsonl은 국립국어원에서 제공한 데이터의 일부분이며, 전체 데이터는 국립국어원 모두의 말뭉치에서 다운받으실 수 있습니다. https://corpus.korean.go.kr/
 
 학습된 baseline 모델은 아래 링크에서 받으실 수 있습니다.
@@ -27,3 +29,7 @@ category extraction result는 category 추출에 대해서만 평가한것이고
 | ---------------------------- | -------------- |
 | category extraction result | 0.42/0.40/0.41 |
 | entire pipeline result | 0.39/0.38/0.38 |
+
+
+## Authors
+- 정용빈, Teddysum, ybjeong@teddysum.ai
