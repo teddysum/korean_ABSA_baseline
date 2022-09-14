@@ -41,12 +41,44 @@ Aspect Category Detection (ACD) model link: https://drive.google.com/file/d/109z
 
 Aspect Sentiment Classification (ASC) link: https://drive.google.com/file/d/1UU1I9CR4TIEYRD87PAhvOJ763AjE-ZDT/view?usp=sharing
 
-### category extraction
+### Aspect Category Detection (ACD)
 모델 입력형태를 \<s>sentence_form\</s>\</s>카테고리\</s>와 같이하고, 각 category별로 해당 문장에서 추출 될지/ 되지 않을지에 대한 이진 분류를 합니다.
-모든 카테고리에 대해 수행한 뒤, True로 판별된 category를 모으면, 해당 문장에서 나타난 카테고리가 모아집니다.
+모든 카테고리에 대해 수행한 뒤, True(0)로 판별된 category를 모으면, 해당 문장에서 나타난 카테고리가 모아집니다.
 
-### polarity classification
-추출 된 category에 대해 모델 입력형태를 \<s>sentence_form\</s>\</s>카테고리\</s>와 같이하고, positive, neutral, negative로 classification 합니다.
+입력 예시 - 모든 category에 대해
+```
+\<s>둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.\</s>\</s>제품 전체#일반\</s>
+\<s>둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.\</s>\</s>제품 전체#가격\</s>
+\<s>둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.\</s>\</s>제품 전체#디자인\</s>
+\<s>둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.\</s>\</s>본품#품질\</s>
+\<s>둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.\</s>\</s>본품#디자인\</s>
+...
+```
+
+출력 예시 - 모든 category에 대해 0 or 1 (False or True)
+```
+0
+0
+0
+1
+0
+...
+```
+
+### Aspect Sentiment Classification (ASC)
+추출 된 category에 대해 모델 입력형태를 \<s>sentence_form\</s>\</s>카테고리\</s>와 같이하고, positive, negative, neutral (0, 1, 2)로 classification 합니다.
+
+입력 예시 - ACD에서 추출된 category에 대해서만 입력
+```
+\<s>둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.\</s>\</s>본품#품질\</s>
+...
+```
+
+출력 예시 - 0, 1, 2 로 출력 (positive, negative, neutral)
+```
+10
+...
+```
 
 ### 평가
 baseline 코드에서 제공된 평가 코드로 평가하였을때, 아래와 같이 결과가 나왔습니다.
@@ -89,6 +121,7 @@ category extraction result는 Aspect Category Detection (ACD)에 대해서만 �
 
 ## reference
 xlm-roberta-base in huggingface (https://huggingface.co/xlm-roberta-base)
+
 모두의말뭉치 in 국립국어원 (https://corpus.korean.go.kr/)
 ## Authors
 - 정용빈, Teddysum, ybjeong@teddysum.ai
