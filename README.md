@@ -1,6 +1,6 @@
 # korean_ABSA_baseline
 
-본 소스코드는는 '2022 국립국어원 인공 지능 언어 능력 평가'의 속성 기반 감성 분석 과제의 베이스라인 모델 및 학습과 평가를 위한 코드를 제공하고 있습니다. 자세한 코드의 설명은 '...ipynb' notebook을 확인해주세요
+본 소스코드는는 '2022 국립국어원 인공 지능 언어 능력 평가'의 속성 기반 감성 분석 과제의 베이스라인 모델 및 학습과 평가를 위한 코드를 제공하고 있습니다. 자세한 코드의 설명은 'src/aspect_based_sentiment_analysis_baseline.ipynb' notebook을 확인해주세요. ipynb(src/aspect_based_sentiment_analysis_baseline.ipynb) 형태의 코드와 python(sentiment_analysis.py) 파일 모두 제공하고 있으니, 선호하는 형태의 코드를 참조하면 되고, 'src/train.sh', 'src/test.sh' 두 개의 sh 파일을 이용하면 python 코드 동작에 도움이 될것입니다.
 
 
 
@@ -26,11 +26,14 @@ sample.jsonl은 국립국어원에서 제공한 데이터의 일부분이며, �
 {"id": "nikluge-sa-2022-train-00015", "sentence_form": "이런 젠장..", "annotation": [["제품 전체#일반", [null, 0, 0], "negative"]]}
 ```
 
+#### 데이터 전처리
+모델을 학습하기 위한 데이터 전처리는 소스코드의 tokenize_and_align_labels(tokenizer, form, annotations, max_len) 함수와 get_dataset(raw_data, tokenizer, max_len) 함수를 참고하시면 됩니다. tokenize_and_align_labels에서 원하는 형태의 데이터 형태로 가공하고, get_dataset에서 pytorch의 DataLoader를 이용하기 위한 TensorDataset 형태로 가공합니다.
+
 
 ## 모델 구성
 Aspect Category Detection (ACD) 모델과 Aspect Sentiment Classification (ASC) 모델을 pipeline으로 연결한 모델입니다.
 
-xlm-roberta-base를 기반으로 학습하였습니다.
+xlm-roberta-base(https://huggingface.co/xlm-roberta-base)를 기반으로 학습하였습니다.
 
 학습된 baseline 모델은 아래 링크에서 받으실 수 있습니다.
 
@@ -45,14 +48,47 @@ Aspect Sentiment Classification (ASC) link: https://drive.google.com/file/d/1UU1
 ### polarity classification
 추출 된 category에 대해 모델 입력형태를 \<s>sentence_form\</s>\</s>카테고리\</s>와 같이하고, positive, neutral, negative로 classification 합니다.
 
-### 성능
+### 평가
 baseline 코드에서 제공된 평가 코드로 평가하였을때, 아래와 같이 결과가 나왔습니다.
-ACD result는 category 추출에 대해서만 평가한것이고, entire pipeline은 ASC까지 포함한 성능입니다.
+test_sentiment_analysis() 함수를 이용하면 평가를 진행할 수 있습니다.
+
+평가함수는 evaluation_f1(true_data, pred_data) 함수를 이용하면 되고, 입력 데이터는 아래와 같습니다. 주목할 점은 true_data는 학습데이터와 형태가 똑같고, pred_data는 annotation에 ["기어", 16, 18] 와 같은 데이터는 제외하고, category와 sentiment만을 값으로 가집니다.
+
+모델을 이용하여 pred_data와 같은 형태의 데이터를 만들기 위한 방법은 predict_from_korean_form(tokenizer, ce_model, pc_model, data) 함수를 참고하면 됩니다. 이 함수의 경우 두 개의 모델을 pipieline으로 연결하여 입력으로부터 결과를 얻어 출력과 같은 모양으로 만들어 줍니다.
+
+true_data
+``` 
+{"id": "nikluge-sa-2022-train-00001", "sentence_form": "둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.", "annotation": [["본품#품질", ["기어", 16, 18], "negative"]]}
+{"id": "nikluge-sa-2022-train-00002", "sentence_form": "이거 뭐 삐꾸를 준 거 아냐 불안하고, 거금 투자한 게 왜 이래.. 싶어서 정이 확 떨어졌는데 산 곳 가져가서 확인하니 기어 텐션 문제라고 고장 아니래.", "annotation": [["본품#품질", ["기어 텐션", 67, 72], "negative"]]}
+{"id": "nikluge-sa-2022-train-00003", "sentence_form": "간사하게도 그 이후에는 라이딩이 아주 즐거워져서 만족스럽게 탔다.", "annotation": [["제품 전체#일반", [null, 0, 0], "positive"]]}
+```
+
+
+pred_data
+```
+{"id": "nikluge-sa-2022-train-00001", "sentence_form": "둘쨋날은 미친듯이 밟아봤더니 기어가 헛돌면서 틱틱 소리가 나서 경악.", "annotation": [["본품#품질", "negative"]]}
+{"id": "nikluge-sa-2022-train-00002", "sentence_form": "이거 뭐 삐꾸를 준 거 아냐 불안하고, 거금 투자한 게 왜 이래.. 싶어서 정이 확 떨어졌는데 산 곳 가져가서 확인하니 기어 텐션 문제라고 고장 아니래.", "annotation": [["본품#품질", "negative"]]}
+{"id": "nikluge-sa-2022-train-00003", "sentence_form": "간사하게도 그 이후에는 라이딩이 아주 즐거워져서 만족스럽게 탔다.", "annotation": [["제품 전체#일반", "positive"]]}
+```
+
+evaluation_t1은 다음과 같은 출력값을 가집니다.
+```
+{
+  'category extraction result': {'Precision': 0.6603624901497241, 'Recall': 0.3534373681990721, 'F1': 0.46043956043956047}, 
+  'entire pipeline result': {'Precision': 0.6146572104018913, 'Recall': 0.32897511598481655, 'F1': 0.4285714285714286}
+  }
+```
+
+
+category extraction result는 Aspect Category Detection (ACD)에 대해서만 평가한것이고, entire pipeline은 ASC까지 포함한 성능입니다.
 | 평가                       |  P/R/F1         |
 | ---------------------------- | -------------- |
-| category extraction result | 0.42/0.40/0.41 |
-| entire pipeline result | 0.39/0.38/0.38 |
+| category extraction result | 0.66/0.35/0.46 |
+| entire pipeline result | 0.61/0.32/0.42 |
 
 
+## reference
+xlm-roberta-base in huggingface (https://huggingface.co/xlm-roberta-base)
+모두의말뭉치 in 국립국어원 (https://corpus.korean.go.kr/)
 ## Authors
 - 정용빈, Teddysum, ybjeong@teddysum.ai
