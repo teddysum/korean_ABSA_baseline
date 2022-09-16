@@ -37,9 +37,9 @@ xlm-roberta-base(https://huggingface.co/xlm-roberta-base)를 기반으로 학습
 
 학습된 baseline 모델은 아래 링크에서 받으실 수 있습니다.
 
-Aspect Category Detection (ACD) model link: https://drive.google.com/file/d/109z2rAk53UTVzFjRu-KtN_E3TiZ4yx-r/view?usp=sharing
+Aspect Category Detection (ACD) model link: https://drive.google.com/file/d/13KpAE_7NRGuI3JnqaORuslv_6YGE-8QS/view?usp=sharing
 
-Aspect Sentiment Classification (ASC) link: https://drive.google.com/file/d/1UU1I9CR4TIEYRD87PAhvOJ763AjE-ZDT/view?usp=sharing
+Aspect Sentiment Classification (ASC) link: https://drive.google.com/file/d/1PEtecZW1bWpzA06SyW7nOBMX1-v-A78M/view?usp=sharing
 
 ### Aspect Category Detection (ACD)
 모델 입력형태를 \<s>sentence_form\</s>\</s>카테고리\</s>와 같이하고, 각 category별로 해당 문장에서 추출 될지/ 되지 않을지에 대한 이진 분류를 합니다.
