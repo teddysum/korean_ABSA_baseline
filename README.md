@@ -116,8 +116,8 @@ evaluation_t1은 다음과 같은 출력값을 가집니다.
 category extraction result는 Aspect Category Detection (ACD)에 대해서만 평가한것이고, entire pipeline은 ASC까지 포함한 성능입니다.
 | 평가                       |  P/R/F1         |
 | ---------------------------- | -------------- |
-| category extraction result | 0.66/0.35/0.46 |
-| entire pipeline result | 0.61/0.32/0.42 |
+| category extraction result | 0.62/0.46/0.53 |
+| entire pipeline result | 0.58/0.43/0.49 |
 
 
 ## reference
