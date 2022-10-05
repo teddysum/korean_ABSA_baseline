@@ -1,3 +1,6 @@
+\testbf{10월 5일 수정 내용}
+ - Aspect Category 목록 정의(총 25가지) : {'제품 전체#품질', '패키지/구성품#디자인', '본품#일반', '제품 전체#편의성', '본품#다양성', '제품 전체#디자인', '패키지/ 구성품#가격', '본품#품질', '브랜드#인지도', '제품 전체#일반', '브랜드#일반', '패키지/구성품#다양성', '패키지/구성품#일반', '본품#인지도', '제품 전체#가격', '본품#편의성', '패키지/구성품#편의성', '본품#디자인', '브랜드#디자인', '본품#가격', '브랜드#품질', '제품 전체#인지도', '패키지/구성품#품질', '제품 전체#다양성', '브랜드#가격'}
+
 # korean_ABSA_baseline
 
 본 소스코드는는 '2022 국립국어원 인공 지능 언어 능력 평가'의 속성 기반 감성 분석 과제의 베이스라인 모델 및 학습과 평가를 위한 코드를 제공하고 있습니다. 자세한 코드의 설명은 'src/aspect_based_sentiment_analysis_baseline.ipynb' notebook을 확인해주세요. ipynb(src/aspect_based_sentiment_analysis_baseline.ipynb) 형태의 코드와 python(sentiment_analysis.py) 파일 모두 제공하고 있으니, 선호하는 형태의 코드를 참조하면 되고, 'src/train.sh', 'src/test.sh' 두 개의 sh 파일을 이용하면 python 코드 동작에 도움이 될것입니다.
@@ -104,8 +107,8 @@ pred_data
 evaluation_t1은 다음과 같은 출력값을 가집니다.
 ```
 {
-  'category extraction result': {'Precision': 0.6603624901497241, 'Recall': 0.3534373681990721, 'F1': 0.46043956043956047}, 
-  'entire pipeline result': {'Precision': 0.6146572104018913, 'Recall': 0.32897511598481655, 'F1': 0.4285714285714286}
+  'category extraction result': {'Precision': 0.629059829059829, 'Recall': 0.4681933842239186, 'F1': 0.536834427425237}, 
+  'entire pipeline result': {'Precision': 0.5836177474402731, 'Recall': 0.4351145038167939, 'F1': 0.49854227405247814}
   }
 ```
 
