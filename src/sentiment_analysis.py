@@ -438,7 +438,8 @@ def train_sentiment_analysis(args=None):
 
         # polarity train
         polarity_total_loss = 0
-
+        polarity_model.train()
+        
         for step, batch in enumerate(polarity_train_dataloader):
             batch = tuple(t.to(device) for t in batch)
             b_input_ids, b_input_mask, b_labels = batch
