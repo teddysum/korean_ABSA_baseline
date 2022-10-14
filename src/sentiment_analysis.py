@@ -59,6 +59,13 @@ def jsonlload(fname, encoding="utf-8"):
     return json_list
 
 
+# json list를 jsonl 형태로 저장
+def jsonldump(j_list, fname):
+    f = open(fname, "w", encoding='utf-8')
+    for json_data in j_list:
+        f.write(json.dumps(json_data, ensure_ascii=False)+'\n')
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="sentiment analysis")
     parser.add_argument(
@@ -645,6 +652,7 @@ def test_sentiment_analysis(args):
     pred_data = predict_from_korean_form(tokenizer, model, polarity_model, copy.deepcopy(test_data))
 
     # jsondump(pred_data, './pred_data.json')
+    # jsonldump(pred_data, './pred_data.json')
     # pred_data = jsonload('./pred_data.json')
 
     print('F1 result: ', evaluation_f1(test_data, pred_data))
