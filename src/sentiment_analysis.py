@@ -602,6 +602,9 @@ def evaluation_f1(true_data, pred_data):
 
             if is_pipeline_found is False:
                 pipeline_eval['FP'] += 1
+            
+            is_ce_found = False
+            is_pipeline_found = False
 
     ce_precision = ce_eval['TP']/(ce_eval['TP']+ce_eval['FP'])
     ce_recall = ce_eval['TP']/(ce_eval['TP']+ce_eval['FN'])
