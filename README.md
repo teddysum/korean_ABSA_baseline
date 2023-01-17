@@ -6,7 +6,7 @@
 
 # korean_ABSA_baseline
 
-본 소스코드는는 '2022 국립국어원 인공 지능 언어 능력 평가'의 속성 기반 감성 분석 과제의 베이스라인 모델 및 학습과 평가를 위한 코드를 제공하고 있습니다. 자세한 코드의 설명은 'src/aspect_based_sentiment_analysis_baseline.ipynb' notebook을 확인해주세요. ipynb(src/aspect_based_sentiment_analysis_baseline.ipynb) 형태의 코드와 python(sentiment_analysis.py) 파일 모두 제공하고 있으니, 선호하는 형태의 코드를 참조하면 되고, 'src/train.sh', 'src/test.sh' 두 개의 sh 파일을 이용하면 python 코드 동작에 도움이 될것입니다.
+본 소스코드는 '2022 국립국어원 인공 지능 언어 능력 평가'의 속성 기반 감성 분석 과제의 베이스라인 모델 및 학습과 평가를 위한 코드를 제공하고 있습니다. 자세한 코드의 설명은 'src/aspect_based_sentiment_analysis_baseline.ipynb' notebook을 확인해주세요. ipynb(src/aspect_based_sentiment_analysis_baseline.ipynb) 형태의 코드와 python(sentiment_analysis.py) 파일 모두 제공하고 있으니, 선호하는 형태의 코드를 참조하면 되고, 'src/train.sh', 'src/test.sh' 두 개의 sh 파일을 이용하면 python 코드 동작에 도움이 될것입니다.
 
 
 
