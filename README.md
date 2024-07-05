@@ -12,7 +12,6 @@
 
 ## 데이터
 sample.jsonl은 국립국어원에서 제공한 데이터의 일부분이며, 평가에 사용되는 데이터는 참가 신청 후 각 과제 페이지 '자료 받기'에서 받으실 수 있습니다.
-인공지능(AI)말평([kli.korean.go.kr/benchmark](https://kli.korean.go.kr/benchmark/home.do))
 
 #### example
 ``` 
@@ -126,6 +125,7 @@ category extraction result는 Aspect Category Detection (ACD)에 대해서만 �
 
 ## reference
 xlm-roberta-base in huggingface (https://huggingface.co/xlm-roberta-base)
+
 인공지능(AI)말평([kli.korean.go.kr/benchmark](https://kli.korean.go.kr/benchmark/home.do))
 
 ## Authors
