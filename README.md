@@ -126,6 +126,6 @@ category extraction result는 Aspect Category Detection (ACD)에 대해서만 �
 ## reference
 xlm-roberta-base in huggingface (https://huggingface.co/xlm-roberta-base)
 
-인공지능(AI)말평(kli.korean.go.kr/benchmark)
+인공지능(AI)말평(kli.korean.go.kr/benchmark)\href{kli.korean.go.kr/benchmark}
 ## Authors
 - 정용빈, Teddysum, ybjeong@teddysum.ai
